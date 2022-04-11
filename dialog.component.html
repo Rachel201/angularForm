@@ -1,0 +1,30 @@
+<form [formGroup]="profileForm" (ngSubmit)="submit()"> 
+
+    <h1 mat-dialog-title>{{title}}</h1>
+    <mat-dialog-content>
+        <mat-form-field>
+            <input matInput formControlName="firstName" placeholder="Enter first name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="lastName" placeholder="Enter last name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="email" placeholder="Enter email">
+        </mat-form-field>
+        <img  [src]="url">
+    </mat-dialog-content>
+    <form fxLayout="column" >
+        <input
+          type="file"
+          accept="image/*"
+          placeholder="Input img"
+          name="input-file"
+          (change)="selectFile($event)"
+        />
+        
+    </form>
+    <mat-dialog-actions>
+        <button mat-button type="submit">save</button>
+    </mat-dialog-actions>
+
+</form>
